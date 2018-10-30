@@ -3,13 +3,14 @@ struct Rectangle {
     width: u32,
 }
 
-fn area(rectangle: &Rectangle) -> u32 {
-    rectangle.height * rectangle.width
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.height * self.width
+    }
 }
-
 
 fn main() {
     let rectangle = Rectangle { height: 4, width: 6 };
 
-    println!("Area of Rectangle is {}", area(&rectangle));
+    println!("Area of Rectangle is {}", rectangle.area());
 }
